@@ -52,6 +52,7 @@ namespace Blog.Web
                 .AddDefaultTokenProviders()
                 .AddSignInManager<SignInManager<ApplicationUserIdentity>>();
 
+            services.AddControllers();
             services.AddCors();
 
             services.AddAuthentication(options =>
@@ -68,8 +69,8 @@ namespace Blog.Web
                     options.SaveToken = true;
                     options.TokenValidationParameters = new TokenValidationParameters
                     {
-                        ValidateIssuer = true,
-                        ValidateAudience = true,
+                        ValidateIssuer = false,
+                        ValidateAudience = false,
                         ValidateLifetime = true,
                         ValidateIssuerSigningKey = true,
                         ValidIssuer = _config["Jwt:Issuer"],
