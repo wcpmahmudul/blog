@@ -15,9 +15,9 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'blogs', component: BlogsComponent },
   { path: 'blogs/:id', component: BlogComponent },
-  { path: 'photo-album', component: PhotoAlbumComponent, canActivate: [AuthGuard] },
+  { path: 'photo-album', component: PhotoAlbumComponent, canActivate: [AuthGuard] }
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
-  { path: 'dashboard/:id', component: BlogEditComponent, canActivate: [AuthGuard] },
+  { path: 'dashboard/:id', component: BlogEditComponent, canActivate: [AuthGuard] }
   { path: 'not-found', component: NotFoundComponent },
   { path: '**', redirectTo: '/not-found' }
 ];
